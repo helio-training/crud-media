@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import VideoGame from './VideoGame';
+import CreateVideoGame from './CreateVideoGame';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -17,10 +18,11 @@ export default class extends Component {
         this.getVideoGames();
     }
     render() {
-        const displayGames = this.state.videoGames.map(game => <VideoGame game={game}/>) 
+        const displayGames = this.state.videoGames.map(game => <VideoGame key={game._id} game={game}/>) 
         return (
-            <div>
+            <div id="HelloThere">
                 <h1>Video Games</h1>
+                <CreateVideoGame refresh={this.getVideoGames}/>
                 {displayGames}
             </div>
         )
