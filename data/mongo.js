@@ -57,7 +57,7 @@ function changeOne(info) {
 
 function deleteOne(info) {
 
-    return info.collection.deleteOne(info.query);
+    return info.collection.deleteOne({ _id: ObjectID(info.id) });
 
 }
 

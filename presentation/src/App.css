@@ -52,6 +52,9 @@ button {
   align-self: center;
 }
 
-.del-console {
+.del-btn {
   background-color: red;
+  color: black;
+  width: 30px;
+  margin-left: 2vw;
 }

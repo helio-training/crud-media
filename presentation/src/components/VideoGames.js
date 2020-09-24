@@ -18,9 +18,10 @@ export default class extends Component {
         this.getVideoGames();
     }
     render() {
-        const displayGames = this.state.videoGames.map(game => <VideoGame key={game._id} game={game}/>) 
+        const displayGames = this.state.videoGames.map(game => 
+            <VideoGame key={game._id} game={game} refresh={this.getVideoGames}/>) 
         return (
-            <div id="HelloThere">
+            <div>
                 <h1>Video Games</h1>
                 <CreateVideoGame refresh={this.getVideoGames}/>
                 {displayGames}

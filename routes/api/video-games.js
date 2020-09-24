@@ -30,6 +30,21 @@ router.post('/', function(req, res, next) {
         .catch(err => {
             console.log(err);
         })
+        
+});
+
+router.delete('/:id', function(req, res, next) {
+    const info = {
+        id: req.params.id,
+        collection: req.app.locals.collectionVideoGames
+    }
+    db.deleteOne(info)
+        .then((data) => {
+            res.json({ msg: `deleted ${info.id}` });
+        })
+        .catch(err => {
+            console.log(err);
+        })
 });
 
 /* GET games listing. */
