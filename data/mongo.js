@@ -35,30 +35,23 @@ function readOne(info) {
 }
 
 function readOneById(info) {
-
     return info.collection.findOne({ _id: ObjectID(info.id) });
 }
 
 function createOne(info) {
-
     return info.collection.insertOne(info.doc);
-
 }
 
 function replaceOne(info) {
-
-    return info.collection.findOneAndReplace(info.query, info.doc);
+    return info.collection.findOneAndReplace({ _id: ObjectID(info.id) }, info.doc);
 }
 
 function changeOne(info) {
-
     return info.collection.findOneAndUpdate(info.query, { $set: info.doc });
 }
 
 function deleteOne(info) {
-
     return info.collection.deleteOne({ _id: ObjectID(info.id) });
-
 }
 
 module.exports.connect = connect;

@@ -58,3 +58,9 @@ button {
   width: 30px;
   margin-left: 2vw;
 }
+.edit {
+  background-color: green;
+  color: white;
+  width: 60px;
+  margin-left: 2vw;
+}
