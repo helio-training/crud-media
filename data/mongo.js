@@ -12,6 +12,7 @@ function connect(locals) {
     return client.connect()
         .then((connection) => {
             locals.collectionVideoGames = connection.db('games').collection('video-games');
+            locals.collectionCardGames = connection.db('games').collection('card-games');
         })
         .catch(err => {
             console.log(err);
@@ -24,14 +25,11 @@ function close() {
 }
 
 function readAll(info) {
-
     return info.collection.find(info.query).toArray();
 }
 
 function readOne(info) {
-
     return info.collection.findOne(info.query);
-
 }
 
 function readOneById(info) {
